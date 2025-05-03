@@ -14,6 +14,7 @@ gfortran -fconvert=big-endian -o out writevtk_serial.f90
 ```
 
 ## Results
+The images show the mesh and the scalar field in VisIt and ParaView
 
 ![VisIt](Images/binary_vtk_VisIt.png)
 ![ParaView](Images/binary_vtk_ParaView.png)
