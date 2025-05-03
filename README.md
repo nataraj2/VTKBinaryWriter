@@ -9,7 +9,7 @@ cd VTKBinaryWriter
 ## Compilation and running
 ```
 cd serial_writer
-gfortran -fconvert=big-endian -o out 
+gfortran -fconvert=big-endian -o out writevtk_serial.f90
 ./out
 ```
 
