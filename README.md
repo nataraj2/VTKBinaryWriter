@@ -13,5 +13,10 @@ gfortran -fconvert=big-endian -o out writevtk_serial.f90
 ./out
 ```
 
+## Results
+
+![VisIt](Images/binary_vtk_VisIt.png)
+![ParaView](Images/binary_vtk_ParaView.png)
+
 
 
