@@ -40,4 +40,4 @@ The images show the mesh and the scalar field in VisIt and ParaView
 
 
 128x128x128 mesh and scalar field with f90-cpp  
-<img src="Images/mesh_128x128x128.png" width="50%" /> <img src="Images/scalar_128x128x128.png" width="50%" />
+<img src="Images/mesh_128x128x128.png" width="45%" /> <img src="Images/scalar_128x128x128.png" width="45%" />
