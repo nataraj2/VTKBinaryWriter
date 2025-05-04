@@ -21,7 +21,7 @@ mpirun -np <nprocs> vtk_driver
 ```
 
 ## Notes
-1. To demonstrate the parallelization, the domain decomposed only in the z-direction.  
+1. To demonstrate the parallelization, the domain is decomposed only in the z-direction.  
 But the parallel writer is generic and does not assume anything about the domain 
 decomposition.  
 
