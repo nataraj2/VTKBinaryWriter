@@ -19,6 +19,7 @@ cd parallel_writer/f90_and_cpp
 make -j4
 mpirun -np <nprocs> vtk_driver
 ```
+This writes a binary vtk file - `grid.vtk` with the mesh and one scalar field.
 
 ## Notes
 1. To demonstrate the parallelization, the domain is decomposed only in the z-direction.  
