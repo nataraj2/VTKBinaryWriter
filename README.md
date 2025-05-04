@@ -32,8 +32,8 @@ writer is generic and does not assume anything about the domain decomposition.
 initialized in the fortran code and is passed into the c++ code. The same can be 
 done with the mesh as well.
 
-3. The makefile is for the mpich implementation of MPI. If using OpenMPI, then  
-some changes in the makefile will be needed. ChatGPT should help with that.
+3. The makefile is for the mpich implementation of MPI. If using OpenMPI, then some 
+changes in the makefile will be needed. ChatGPT should help with that.
 
 ## Results
 The images show the mesh and the scalar field in VisIt and ParaView
