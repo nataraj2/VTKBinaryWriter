@@ -19,7 +19,9 @@ cd parallel_writer/f90_and_cpp
 make -j4
 mpirun -np <nprocs> vtk_driver
 ```
-This writes a binary vtk file - `grid.vtk` with the mesh and one scalar field.
+This writes a binary vtk file - `grid.vtk` with the mesh and one scalar field. 
+An example with `mpirun -np 128 vtk_driver` for `128x128x128` is shown in the image 
+below.
 
 ## Notes
 1. To demonstrate the parallelization, the domain is decomposed only in the z-direction.  
@@ -33,4 +35,8 @@ done with the mesh as well.
 ## Results
 The images show the mesh and the scalar field in VisIt and ParaView
 
+20x20x20 mesh and scalar field
 <img src="Images/binary_vtk_VisIt.png" width="35%" /> <img src="Images/binary_vtk_ParaView.png" width="60%" />
+
+128x128x128 mesh and scalar field with f90-cpp
+<img src="Images/mesh_128x128x128.png" width="35%" /> <img src="Images/scalar_128x128x128" width="60%" />
