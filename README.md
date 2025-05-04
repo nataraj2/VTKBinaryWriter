@@ -33,5 +33,5 @@ done with the mesh as well.
 ## Results
 The images show the mesh and the scalar field in VisIt and ParaView
 
-<img src="Images/binary_vtk_VisIt.png" width="50%" />
-<img src="Images/binary_vtk_ParaView.png" width="50%" />
+<img src="Images/binary_vtk_VisIt.png" width="30%" />
+<img src="Images/binary_vtk_ParaView.png" width="60%" />
