@@ -1,0 +1,46 @@
+# Extended Makefile for Fortran + C++ MPI VTK writer with parallel build and dependency tracking
+
+# Compiler wrappers
+CXX = mpic++
+FC  = mpif90
+
+# Source and object files
+CXX_SRC = vtk_writer.cpp
+FC_SRC  = main.f90
+
+CXX_OBJ = $(CXX_SRC:.cpp=.o)
+FC_OBJ  = $(FC_SRC:.f90=.o)
+DEPS    = $(CXX_SRC:.cpp=.d)
+
+# Executable name
+EXEC = vtk_driver
+
+# Flags
+CXXFLAGS = -O2 -MMD -MP
+FFLAGS   = -O2
+LDFLAGS  = -lmpi -lmpi_cxx -lstdc++  # Explicitly link OpenMPI, MPI C++ bindings, and standard C++ libraries
+
+# Include OpenMPI directories (paths to headers and libraries)
+INCLUDES = -I/usr/lib/x86_64-linux-gnu/openmpi/include -I/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi
+LIBDIRS   = -L/usr/lib/x86_64-linux-gnu/openmpi/lib
+
+.PHONY: all clean
+
+all: $(EXEC)
+
+$(EXEC): $(FC_OBJ) $(CXX_OBJ)
+	$(FC) $(FC_OBJ) $(CXX_OBJ) $(LIBDIRS) $(LDFLAGS) -o $@
+
+# Compile C++ with dependency generation
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
+
+# Compile Fortran normally
+%.o: %.f90
+	$(FC) $(FFLAGS) $(INCLUDES) -c $< -o $@
+
+# Include generated dependencies
+-include $(DEPS)
+
+clean:
+	rm -f *.o *.mod *.d $(EXEC)
